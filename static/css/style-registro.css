@@ -1,0 +1,42 @@
+#contenedor-inferior{
+    background-color: white;
+    display: flex;
+}
+#contenedor-inferior{
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+#contenedor-inferior img{
+    width: 250px;
+    height: 180px;
+}
+#contenedor-inferior hr{
+    background-color: gray; 
+    height: 1.2px;
+
+}
+#contenedor-inferior h5{
+    color: rgb(167, 164, 164);
+
+}
+#lat-izq{
+    margin-right: 0%;
+    margin-left: 90%;
+}
+#lat-der{
+    margin-right: 90%;
+    margin-left: 0%;
+}
+.lateral-izq{
+    width: 50%;
+    text-align: right;
+    padding-right: 15px;
+}
+.lateral-der{
+    width: 50%;
+    padding-left: 15px;
+}
+#resgistro, #prop{
+    margin-left: 43%;
+}
