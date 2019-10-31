@@ -2,18 +2,28 @@ from django.db import models
 from django.utils import timezone
 
 
-class Post(models.Model):
-        author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-        title = models.CharField(max_length=200)
-        text = models.TextField()
-        created_date = models.DateTimeField(
-            default=timezone.now)
-        published_date = models.DateTimeField(
-            blank=True, null=True)
+class Usuario(models.Model):
+    email = models.CharField(max_length=50)
+    run = models.CharField(max_length=20)
+    nombre_completo = models.CharField(max_length=200)
+    fecha_nacimiento = models.DateTimeField()
+    telefono_contacto = models.CharField(max_length=9)
+    usuario = models.CharField(max_length=30)
+    contraseña = models.CharField(max_length=8)
 
-        def publish(self):
-            self.published_date = timezone.now()
-            self.save()
+    def __str__(self):
+        return self.nombre_completo
 
-        def __str__(self):
-            return self.title
+class Producto(models.Model):
+    id_producto = models.CharField(max_length=3)
+    nombre = models.CharField(max_length=50)
+    precio = models.IntegerField()
+    estado = models.BooleanField(default = True)
+    stock = models.IntegerField()
+    imagen = models.ImageField()
+
+    def __str__(self):
+        return self.nombre
+
+
+
