@@ -20,10 +20,9 @@ class Producto(models.Model):
     precio = models.IntegerField()
     estado = models.BooleanField(default = True)
     stock = models.IntegerField()
-    imagen = models.ImageField(upload_to = 'imagen/productos',null = True)
-
+    equipo = models.CharField(max_length=30, blank = True)
+    imagen_front = models.ImageField(upload_to = 'imagen/productos',null = True)
+    imagen_back = models.ImageField(upload_to = 'imagen/productos', null = True)
+    
     def __str__(self):
         return self.nombre
-
-
-
