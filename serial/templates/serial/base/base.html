@@ -16,14 +16,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <!----linkcss-->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {%block css_style %} {% endblock %}
+    
 </head>
 <body>
 	<div class="container">
 		<div class="header">
             <div class="logo">
-                <a href="/index.html">
+                <a href="/">
                     <img src="{% static 'imagenes/logo/logo.png'%}" alt="Logo_Serial" style="width: 200px; height: 100px;" />
                 </a>
             </div>
@@ -33,7 +33,7 @@
                         <a class="nav-link active" href="/">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="paginas/tienda.html">Tienda</a>
+                        <a class="nav-link" href="tienda">Tienda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="register">Registro Socios</a>
