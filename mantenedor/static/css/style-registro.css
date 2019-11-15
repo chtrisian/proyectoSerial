@@ -40,3 +40,46 @@
 #resgistro, #prop{
     margin-left: 43%;
 }
+.nav a {
+    display: block;
+    font-size: 14px !important;
+    text-decoration: none;
+    color: #6d6d6d;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 999;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer{
+    display: flex;
+    background-color: rgb(245, 245, 245);
+    padding-bottom: 30px;
+    font-size: 12px;
+    padding-left: 10px;
+    text-align: end;
+}
+.direccion{    
+    flex: auto;
+}
+.redes {    
+    flex: auto;
+    flex-direction: column;
+}
+.redes img{
+    height: 30px;
+    width: 30px;
+    border-radius:150px;
+}
+.tamaño-carusel{
+    height: 550px !important;
+    margin: auto;
+}
+.menu-footer-bottom-menu-container {
+    list-style: none;
+    min-height: 27px;
+    float: right;
+    display: block;
+}
