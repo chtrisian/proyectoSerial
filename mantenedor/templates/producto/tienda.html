@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Tienda {% endblock %}
+
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'css/style-shop.css' %}">
+{% endblock %}
+
+{% block nav_bar %}
+{% include 'base/nav_bar.html' %} 
+{% endblock %}
+
+{% block container %} 
+    <section>
+        <div class="contenedor-tienda">
+            {% for p in productos %}
+                {% if p.estado %}
+                <div class="producto" id="producto-1">
+                    <!---prueba-->
+                    <div class="cf">
+                        <img class="bottom" src="{{p.imagen_front.url}}" alt="{{p.nombre}}" />
+                        <img class="top" src="{{p.imagen_back.url}}" alt="{{p.nombre}}" />
+                    </div>
+                    <br>&nbsp; {{p.nombre}}  <br>
+                    <h6>&nbsp; {{p.precio}} </h6>
+                    <button class="comprar">Comprar</button>
+                </div>  
+                {% endif %}  
+            {% endfor %}
+        </div>
+    </section>   
+{% endblock %}
