@@ -46,3 +46,11 @@ def producto_delete(request, cod):
 		productos.delete()
 		return redirect('/producto_list/')
 	return render(request, 'producto/producto_delete.html', {'productos':productos})
+
+def shop_mas_vendidos(request):
+	productos = Producto.objects.all().filter(id_producto= 4)
+	return render (request, 'producto/tienda.html',{'productos':productos})	
+
+def shop_oferta_mes(request):
+	productos = Producto.objects.all().filter(id_producto= 5)
+	return render (request, 'producto/tienda.html',{'productos':productos})	
