@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Agregar {% endblock %}
+
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block nav_bar %}
+{% include 'base/nav_bar.html' %} 
+{% endblock %}
+{% block container %}
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<button type="submit">Grabar</button>
+</form>
+{% endblock %}

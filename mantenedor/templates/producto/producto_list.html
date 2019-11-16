@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Listar {% endblock %}
+
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block nav_bar %}
+{% include 'base/nav_bar.html' %} 
+{% endblock %}
+{% block container %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Id Producto</td>
+			<td>Nombre</td>
+			<td>Precio</td>
+			<td>Estado</td>
+			<td>Stock</td>
+			<td>Equipo</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if productos %}
+		{% for producto in productos %}
+		<tr>
+			<td>{{ producto.id_producto }}</td>
+			<td>{{ producto.nombre }}</td>
+			<td>{{ producto.precio }}</td>
+			<td>{{ producto.estado }}</td>
+			<td>{{ producto.stock }}</td>
+			<td>{{ producto.equipo }}</td>
+			<td>
+				<a class="btn btn-primary" href="/producto_editar/{{ producto.id_producto }}/">Editar</a>
+				<a class="btn btn-danger" href="/producto_delete/{{ producto.id_producto }}/">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de productos</h1>
+		{% endif %}
+	</tbody>
+</table> 
+{% endblock%}

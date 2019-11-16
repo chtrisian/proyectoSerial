@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Eliminar {% endblock %}
+
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block nav_bar %}
+{% include 'base/nav_bar.html' %} 
+{% endblock %}
+{% block container %}
+<form method="post">
+	{% csrf_token %}
+	<h3>¿Desea eliminar el registro de {{ productos.nombre }}?</h3>	
+	<button class="btn btn-danger" type="submit">Sí, eliminar</button>
+	<a class= "btn btn-default" href="/producto_list/">Cancelar</a>
+</form>
+{% endblock %}
