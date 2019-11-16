@@ -9,17 +9,22 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="nav navbar-nav ml-auto">
-      <p id="usuario"> {{ request.user.username }}</p>
+      <i><b> <p id="usuario"> Usuario: {{ request.user.username | title }}</p></b></i>
 
       <li class="nav-item">
-        <a class="nav-link" href="/">INICIO</a>
+        <a class="nav-link" href="">INICIO</a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link" href="">AGREGAR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">LISTAR</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/tienda">TIENDA</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/accounts/registro">REGISTRO SOCIOS</a>
+        <a class="nav-link" href="/accounts/logout">LOGOUT</a>
       </li>
     </ul>
   </div>
