@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Registro {% endblock %}
+
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'css/style-registro.css' %}">
+{% endblock %}
+
+{% block nav_bar %}
+{% include 'base/nav_bar.html' %} 
+{% endblock %}
+
+{% block container %}
+<h1 > Registrado con éxito! </h1>
+{% endblock %}

@@ -31,77 +31,62 @@
         <h1>Registro</h1>
         <hr id="lat-der" />
         <form action="#" method="post" id="formulario">
-          <table class="table table-hover">
-            <tr>
-              <td><label id="txtEmail">Correo electrónico</label></td>
-              <td>
-                <input
-                type="email"
-                name="txtEmail"
-                id="Email"
-                placeholder="Ingrese su correo electrónico"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label id="txtRun">Run</label></td>
-              <td>
-                <input
-                type="text"
-                class="input_rut"
-                name="txtRun"
-                id="Run"
-                placeholder="Ingrese su run"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label id="txtNombre">Nombre completo</label></td>
-              <td>
-                <input
-                type="text"
-                name="txtNombre"
-                id="Nombre"
-                placeholder="Ingrese su nombre completo"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label id="txtFechaNacimiento">Fecha nacimiento</label>
-              </td>
-              <td>
-                <input
-                type="date"
-                name="txtFechaNacimiento"
-                min="1900-01-01"
-                max="2000-12-31"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label id="txtTelefono">Teléfono de contacto</label></td>
-              <td>
-                <input
-                type="text"
-                name="txtTelefono"
-                id="Telefono"
-                placeholder="Ingrese su teléfono de contacto"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label id="txtRegion">Región</label></td>
-              <td><select id="regiones"></select></td>
-            </tr>
-            <tr>
-              <td><label id="txtComuna">Comuna</label></td>
-              <td><select id="comunas"></select></td>
-            </tr>
-          </table>
+          <div class="form-row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" name="first_name">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label >Apellidos</label>
+                <input class="form-control" type="text" name="last_name">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label >Correo</label>
+                <input class="form-control" type="text" name="email">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label >Nombre de usuario</label>
+                <input class="form-control" type="text" name="username">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label >Contraseña</label>
+                <input class="form-control" type="password" name="password1">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <label >Confirmar contraseña</label>
+                <input class="form-control" type="password" name="password2">
+              </div>
+            </div>
+          </div>
 
-          <br />
-          <button type="button" class="btn btn-primary">Registrarme</button>
+          <div class="form-row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="form-group">
+                <button class="btn btn-primary "type="submit">Guardar</button>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </section>
