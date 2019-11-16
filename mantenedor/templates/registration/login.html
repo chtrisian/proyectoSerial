@@ -3,9 +3,15 @@
 
 {% block title %}Login{% endblock %}
 
-{% block navbar %} {% include 'base/navbar.html' %} {% endblock %}
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 
-{% block content%}
+{% block nav_bar %}
+{% include 'base/nav_bar.html' %} 
+{% endblock %}
+
+{% block container%}
 <form method="post" class="formulario" id="formulario_log_in">
     {% csrf_token %}
     <div class="form-row" id="linea1">
@@ -27,7 +33,7 @@
     <div class="form-row">
         <div class="col-md-6 col-md-offset-3">
             <div class="form-group">
-                <a href="/password_reset/">Olvidé mi contraseña</a>
+                <a href="">Olvidé mi contraseña</a>
                 <input class="btn btn-primary" type="submit" value="Ingresar">
         </div>
         </div>
