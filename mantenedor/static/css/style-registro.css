@@ -61,7 +61,7 @@
     padding-left: 10px;
     text-align: end;
     bottom: 0;
-    position: absolute;
+    position: inherit;
     width: 100%;
 }
 .direccion{    

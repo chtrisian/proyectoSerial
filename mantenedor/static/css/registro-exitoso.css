@@ -1,0 +1,23 @@
+.footer{
+    display: flex;
+    background-color: rgb(245, 245, 245);
+    padding-bottom: 30px;
+    font-size: 12px;
+    padding-left: 10px;
+    text-align: end;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+.direccion{    
+    flex: auto;
+}
+.redes {    
+    flex: auto;
+    flex-direction: column;
+}
+.redes img{
+    height: 30px;
+    width: 30px;
+    border-radius:150px;
+}
