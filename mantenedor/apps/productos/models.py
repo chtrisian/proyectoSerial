@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import ugettext as _
+
 
 
 class Producto(models.Model):
@@ -14,3 +16,9 @@ class Producto(models.Model):
     
     def __str__(self):
         return self.nombre
+
+    class Meta: 
+        permissions = (
+            ('Staff',_('es Staff')),
+            ('Usuario',_('es Usuario')),
+            )

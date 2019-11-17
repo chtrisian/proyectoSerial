@@ -11,41 +11,53 @@ def shop(request):
 	return render (request, 'producto/tienda.html',{'productos':productos})
 
 def producto_view(request):
-	if request.method == 'POST':
-		form = ProductoForm(request.POST)
-		if form.is_valid():
-			form.save()
-		return redirect('/producto_list/')
+	user = request.user
+	if user.has_perm('productos.Staff'):
+		if request.method == 'POST':
+			form = ProductoForm(request.POST)
+			if form.is_valid():
+				form.save()
+			return redirect('/producto_list/')
+		else:
+			form = ProductoForm()
+		return render(request, 'producto/producto_add.html', {'form':form})
 	else:
-		form = ProductoForm()
-	return render(request, 'producto/producto_add.html', {'form':form})
-
+		return redirect('/')
 
 def producto_list(request):
-	productos = Producto.objects.all().order_by('id')
-	return render(request, 'producto/producto_list.html', {'productos':productos})
-
-
+	user = request.user
+	if user.has_perm('productos.Staff'):
+		productos = Producto.objects.all().order_by('id')
+		return render(request, 'producto/producto_list.html', {'productos':productos})
+	else:
+		return redirect('/')
 
 def producto_edit(request, cod):
-	productos = Producto.objects.get(id_producto=cod)
-	if request.method == 'GET':
-		form = ProductoForm(instance=productos)
+	user = request.user
+	if user.has_perm('productos.Staff'):
+		productos = Producto.objects.get(id_producto=cod)
+		if request.method == 'GET':
+			form = ProductoForm(instance=productos)
+		else:
+			form = ProductoForm(request.POST, instance=productos)
+			if form.is_valid():
+				form.save()
+			return redirect('/producto_list/')
+		return render(request, 'producto/producto_editar.html', {'form':form})
 	else:
-		form = ProductoForm(request.POST, instance=productos)
-		if form.is_valid():
-			form.save()
-		return redirect('/producto_list/')
-	return render(request, 'producto/producto_editar.html', {'form':form})
-
-
+		return redirect('/')
 
 def producto_delete(request, cod):
-	productos = Producto.objects.get(id_producto=cod)
-	if request.method == 'POST':
-		productos.delete()
-		return redirect('/producto_list/')
-	return render(request, 'producto/producto_delete.html', {'productos':productos})
+	user = request.user
+	if user.has_perm('productos.Staff'):
+		productos = Producto.objects.get(id_producto=cod)
+		if request.method == 'POST':
+			productos.delete()
+			return redirect('/producto_list/')
+		return render(request, 'producto/producto_delete.html', {'productos':productos})
+	else:
+		return redirect('/')
+
 
 def shop_mas_vendidos(request):
 	productos = Producto.objects.all().filter(id_producto= 4)
