@@ -14,7 +14,7 @@ def producto_view(request):
 	user = request.user
 	if user.has_perm('productos.Staff'):
 		if request.method == 'POST':
-			form = ProductoForm(request.POST)
+			form = ProductoForm(request.POST, request.FILES)
 			if form.is_valid():
 				form.save()
 			return redirect('/producto_list/')
@@ -39,7 +39,7 @@ def producto_edit(request, cod):
 		if request.method == 'GET':
 			form = ProductoForm(instance=productos)
 		else:
-			form = ProductoForm(request.POST, instance=productos)
+			form = ProductoForm(request.POST, request.FILES,instance=productos)
 			if form.is_valid():
 				form.save()
 			return redirect('/producto_list/')

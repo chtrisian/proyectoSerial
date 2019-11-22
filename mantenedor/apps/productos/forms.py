@@ -12,15 +12,21 @@ class ProductoForm(forms.ModelForm):
 			'id_producto',
 			'nombre',
 			'precio',
+			'estado',
 			'stock',
-			'equipo'
+			'equipo',
+			'imagen_front',
+			'imagen_back',
 		]
 		labels = {
 			'id_producto': 'Id Producto',
 			'nombre': 'Nombre',
 			'precio': 'Precio',
+			'estado': 'Estado',
 			'stock': 'Stock',
 			'equipo': 'Equipo',
+			'imagen_front': 'Imagen Frontal',
+			'imagen_back': 'Imagen Posterior',
 		}
 		widgets = {
 			'id_producto': forms.TextInput(attrs={'class':'form-control'}),
