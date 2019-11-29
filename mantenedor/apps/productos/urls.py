@@ -2,9 +2,18 @@ from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.urlpatterns import format_suffix_patterns
+from .views import ProductViewSet, API_objects_details
 
 
-urlpatterns = [   
+urlpatterns = [
+    path('api/', ProductViewSet.as_view()),
+    path('api/<int:pk>/', API_objects_details.as_view()),
+]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
+
+urlpatterns += [   
     path('', views.main_page),
     path('tienda', views.shop),
     path('producto_add/', (views.producto_view)),

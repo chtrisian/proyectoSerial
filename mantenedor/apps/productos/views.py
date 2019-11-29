@@ -1,8 +1,21 @@
+import json
 from django.shortcuts import render, redirect
 from .models import Producto
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .forms import ProductoForm
+from .serializers import ProductSerializer 
+from rest_framework import generics
 # Create your views here.
+class ProductViewSet(generics.ListCreateAPIView):
+    queryset = Producto.objects.all()
+    serializer_class = ProductSerializer
+
+
+class API_objects_details(generics.RetrieveUpdateDestroyAPIView):
+        queryset= Producto.objects.all()
+        serializer_class= ProductSerializer
+
+
 def main_page(request):
     return render(request, 'main_page.html', {})
 
